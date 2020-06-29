@@ -1,40 +1,34 @@
 <div class="container card">
-    <div class="card-header"> <h2 style="text-align: center;background-color: chartreuse;">Form edit</h2></div>
+    <div class="card-header">
+        <h2 style="text-align: center;background-color: chartreuse;">Form edit</h2>
+    </div>
 
-    <form  [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>
-                Title
-                
-               
+                ID
             </label>
             <input class="form-control" type="text" formControlName="id">
         </div>
         <div class="form-group">
             <label>
                 Title
-               
-               
             </label>
             <input class="form-control" type="text" formControlName="title">
         </div>
         <div class="form-group">
             <label>
-                Title
-               
-               
+                Author
             </label>
             <input class="form-control" type="text" formControlName="author">
         </div>
         <div class="form-group">
             <label>
-                body
+                Description
             </label>
-                <textarea class="form-control" formControlName="description" cols="30" rows="10">
+            <textarea class="form-control" formControlName="description" cols="30" rows="10">
             </textarea>
-          
         </div>
-
         <button type="submit">Submit</button>
     </form>
 </div>

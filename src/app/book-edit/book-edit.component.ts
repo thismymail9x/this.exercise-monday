@@ -12,11 +12,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class BookEditComponent implements OnInit {
   book: Book;
-  bookForm:FormGroup = new FormGroup({
-    id:new FormControl(),
+  bookForm: FormGroup = new FormGroup({
+    id: new FormControl(),
     title: new FormControl(),
     author: new FormControl(),
-    description:new FormControl(),
+    description: new FormControl(),
 
   });
   constructor(private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class BookEditComponent implements OnInit {
     private router: Router) { }
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-  
+
     this.booksService.getBookById(id).subscribe(
       next => {
         this.book = next;
@@ -37,9 +37,9 @@ export class BookEditComponent implements OnInit {
       }
     );
   }
-  onSubmit(){
+  onSubmit() {
     const { value } = this.bookForm;
-  
+
     this.booksService.updateBook(value).subscribe(
       next => {
         this.router.navigate(['']);
@@ -47,6 +47,6 @@ export class BookEditComponent implements OnInit {
       error => console.log(error)
     );
   }
-  ondelete(){}
-  
+  ondelete() { }
+
 }

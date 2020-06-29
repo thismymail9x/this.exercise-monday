@@ -25,8 +25,8 @@ const routes: Routes = [
     component: BookAddnewComponent
   }
   , {
-path: 'books/:id/delete',
-component: BookDeleteComponent
+    path: 'books/:id/delete',
+    component: BookDeleteComponent
   }
 ];
 

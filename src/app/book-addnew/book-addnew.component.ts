@@ -12,11 +12,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class BookAddnewComponent implements OnInit {
 
   book: Book;
-  bookForm= new FormGroup({
-    id:new FormControl(),
+  bookForm = new FormGroup({
+    id: new FormControl(),
     title: new FormControl(),
     author: new FormControl(),
-    description:new FormControl(),
+    description: new FormControl(),
 
   });
   constructor(private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class BookAddnewComponent implements OnInit {
     private router: Router) { }
   ngOnInit(): void {
   }
-  onSubmit(){
+  onSubmit() {
     const { value } = this.bookForm;
     console.log(value);
     const data = {

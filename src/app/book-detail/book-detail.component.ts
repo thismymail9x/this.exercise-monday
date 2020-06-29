@@ -20,7 +20,7 @@ export class BookDetailComponent implements OnInit {
     this.booksService.getBookById(id).subscribe(
       next => {
         this.book = next;
-  
+
         console.log(this.book);
       },
       error => {

@@ -14,14 +14,14 @@ export class BooksService {
   }
   getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(`${this.bookAPI}/${id}`);
-}
-createBook(book): Observable<Book> {
+  }
+  createBook(book): Observable<Book> {
     return this.http.post<Book>(this.bookAPI, book);
-}
-deleteBook(id: number): Observable<any> {
+  }
+  deleteBook(id: number): Observable<any> {
     return this.http.delete(`${this.bookAPI}/${id}`);
-}
-updateBook(book: Book): Observable<Book> {
+  }
+  updateBook(book: Book): Observable<Book> {
     return this.http.put<Book>(`${this.bookAPI}/${book.id}`, book);
-}
+  }
 }
