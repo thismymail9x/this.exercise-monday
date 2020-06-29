@@ -12,17 +12,16 @@ export class BooksService {
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.bookAPI);
   }
-  getPostById(id: number): Observable<Book> {
+  getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(`${this.bookAPI}/${id}`);
 }
-createPost(book: Partial<Book>): Observable<Book> {
+createBook(book): Observable<Book> {
     return this.http.post<Book>(this.bookAPI, book);
 }
-deletePost(id: number): Observable<any> {
+deleteBook(id: number): Observable<any> {
     return this.http.delete(`${this.bookAPI}/${id}`);
 }
-updatePost(book: Book): Observable<Book> {
-    return this.http.patch<Book>(`${this.bookAPI}/${book.id}`, book);
+updateBook(book: Book): Observable<Book> {
+    return this.http.put<Book>(`${this.bookAPI}/${book.id}`, book);
 }
-
 }

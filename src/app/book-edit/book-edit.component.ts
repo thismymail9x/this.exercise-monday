@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
-import { ActivationEnd, Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Book } from '../books';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -13,6 +13,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class BookEditComponent implements OnInit {
   book: Book;
   bookForm:FormGroup = new FormGroup({
+    id:new FormControl(),
     title: new FormControl(),
     author: new FormControl(),
     description:new FormControl(),
@@ -23,7 +24,8 @@ export class BookEditComponent implements OnInit {
     private router: Router) { }
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.booksService.getPostById(id).subscribe(
+  
+    this.booksService.getBookById(id).subscribe(
       next => {
         this.book = next;
         this.bookForm.patchValue(this.book);
@@ -37,16 +39,14 @@ export class BookEditComponent implements OnInit {
   }
   onSubmit(){
     const { value } = this.bookForm;
-    const data = {
-      ...this.book,
-      ...value
-    };
-    this.booksService.updatePost(data).subscribe(
+  
+    this.booksService.updateBook(value).subscribe(
       next => {
         this.router.navigate(['']);
       },
       error => console.log(error)
     );
   }
+  ondelete(){}
   
 }

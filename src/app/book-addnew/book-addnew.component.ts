@@ -12,7 +12,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class BookAddnewComponent implements OnInit {
 
   book: Book;
-  bookForm:FormGroup = new FormGroup({
+  bookForm= new FormGroup({
+    id:new FormControl(),
     title: new FormControl(),
     author: new FormControl(),
     description:new FormControl(),
@@ -22,27 +23,15 @@ export class BookAddnewComponent implements OnInit {
     private booksService: BooksService,
     private router: Router) { }
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.booksService.getPostById(id).subscribe(
-      next => {
-        this.book = next;
-        this.bookForm.patchValue(this.book);
-        console.log(this.book);
-      },
-      error => {
-        console.log(error);
-        this.book = null;
-      }
-    );
-  
   }
   onSubmit(){
     const { value } = this.bookForm;
+    console.log(value);
     const data = {
       ...this.book,
       ...value
     };
-    this.booksService.updatePost(data).subscribe(
+    this.booksService.createBook(data).subscribe(
       next => {
         this.router.navigate(['']);
       },

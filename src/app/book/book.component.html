@@ -1,7 +1,7 @@
 <h2 style="text-align: center;">Books list</h2>
 <div class="container">
 <p>Have 3 books</p>
-<a routerLink= "books/addnew">Add new book</a>
+<a routerLink = "books/addnew/show">Add new book</a>
 <table class="table table-striped">
     <tr>
         <th>#</th>
@@ -14,8 +14,8 @@
         <td><a [routerLink]= "['/books', book.id]">{{book.title}}</a></td>
         <td>{{book.author}}</td>
         <td><a href="">delete</a></td>
-        <td><a [routerLink] ="['/books', book.id, 'edit']">edit</a></td>
+        <td><a [routerLink] = "['/books', book.id, 'edit']">edit</a></td>
     </tr>
 </table>
 </div>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

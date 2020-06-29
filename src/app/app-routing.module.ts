@@ -8,20 +8,20 @@ import { BookAddnewComponent } from './book-addnew/book-addnew.component';
 
 const routes: Routes = [
   {
-    path:'books/:id/edit',
-    component:BookEditComponent
+    path: 'books/:id/edit',
+    component: BookEditComponent
   },
   {
-path:'',
-component: BookComponent
+    path: '',
+    component: BookComponent
   },
   {
-    path:'books/:id',
+    path: 'books/:id',
     component: BookDetailComponent
   },
   {
-    path:'books/addnew',
-    component:BookAddnewComponent
+    path: 'books/addnew/show',
+    component: BookAddnewComponent
   }
 ];
 
