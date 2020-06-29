@@ -1,23 +1,12 @@
-<div class="container">
-    <div>
-        <label>
-           <p>id</p> {{book.id}}
-        </label>
+<div class="card col-8" style="margin: 200px 300px ; background-color: cadetblue; color: black;">
+  
+    <div class="card-header">
+      Information
     </div>
-        <div>
-            <label>
-              <p>title-</p> {{book.title}}
-            </label>
-        </div>
-        <div>
-            <label>
-             <p>author-</p>  {{book.author}}
-            </label>
-        </div>
-        <div>
-            <label>
-               <p>description</p>{{book.description}}
-            </label>
-        </div>
-      
-</div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">id:{{book.id}}</li>
+        <li class="list-group-item">title:{{book.title}}</li>
+        <li class="list-group-item">author:{{book.author}}</li>
+        <li class="list-group-item">description:{{book.description}}</li>
+    </ul>
+  </div>

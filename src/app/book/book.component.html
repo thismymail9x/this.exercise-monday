@@ -1,7 +1,7 @@
 <h2 style="text-align: center;">Books list</h2>
 <div class="container">
     <p>Have 3 books</p>
-    <a routerLink="books/addnew/show">Add new book</a>
+    <a class="btn btn-success"routerLink="books/addnew/show">Add new book</a>
     <table class="table table-striped">
         <tr>
             <th>#</th>
@@ -13,8 +13,8 @@
             <td>{{i+1}}</td>
             <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
             <td>{{book.author}}</td>
-            <td><a [routerLink] = "['/books',book.id,'delete']">delete</a></td>
-            <td><a [routerLink]= "['/books', book.id, 'edit']">edit</a></td>
+            <td><a class="btn btn-warning" [routerLink] = "['/books',book.id,'delete']">delete</a></td>
+            <td><a class="btn btn-primary" [routerLink]= "['/books', book.id, 'edit']">edit</a></td>
         </tr>
     </table>
 </div>

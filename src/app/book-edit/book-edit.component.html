@@ -1,33 +1,38 @@
-<div class="container">
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-        <div>
+<div class="container card">
+    <div class="card-header"> <h2 style="text-align: center;background-color: chartreuse;">Form edit</h2></div>
+
+    <form  [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
             <label>
                 Title
-                <br>
-                <input type="text" formControlName="id">
+                
+               
             </label>
+            <input class="form-control" type="text" formControlName="id">
         </div>
-        <div>
+        <div class="form-group">
             <label>
                 Title
-                <br>
-                <input type="text" formControlName="title">
+               
+               
             </label>
+            <input class="form-control" type="text" formControlName="title">
         </div>
-        <div>
+        <div class="form-group">
             <label>
                 Title
-                <br>
-                <input type="text" formControlName="author">
+               
+               
             </label>
+            <input class="form-control" type="text" formControlName="author">
         </div>
-        <div>
+        <div class="form-group">
             <label>
                 body
-                <br>
-                <textarea formControlName="description" cols="30" rows="10">
-            </textarea>
             </label>
+                <textarea class="form-control" formControlName="description" cols="30" rows="10">
+            </textarea>
+          
         </div>
 
         <button type="submit">Submit</button>
