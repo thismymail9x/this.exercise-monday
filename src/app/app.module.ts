@@ -9,6 +9,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookAddnewComponent } from './book-addnew/book-addnew.component';
+import { BookDeleteComponent } from './book-delete/book-delete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BookAddnewComponent } from './book-addnew/book-addnew.component';
     BookComponent,
     BookEditComponent,
     BookDetailComponent,
-    BookAddnewComponent
+    BookAddnewComponent,
+    BookDeleteComponent
   ],
   imports: [
     BrowserModule,
