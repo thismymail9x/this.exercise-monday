@@ -34,7 +34,6 @@ export class BookEditComponent implements OnInit {
         this.book = null;
       }
     );
-  
   }
   onSubmit(){
     const { value } = this.bookForm;
