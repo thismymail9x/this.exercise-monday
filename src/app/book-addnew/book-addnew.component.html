@@ -1,0 +1,28 @@
+<div class="container">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                Title
+                <br>
+                <input type="text" formControlName="title">
+            </label>
+        </div>
+        <div>
+            <label>
+                Title
+                <br>
+                <input type="text" formControlName="author">
+            </label>
+        </div>
+        <div>
+            <label>
+                body
+                <br>
+                <textarea formControlName="description" cols="30" rows="10">
+            </textarea>
+            </label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
